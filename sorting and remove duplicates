@@ -1,0 +1,35 @@
+#Sort a list by ascending order      
+# or use lis.sort()
+
+lis = []
+
+def sortascend():    
+    for i in range(len(lis)-1):        
+        for j in range(len(lis)-1-i):            
+            if lis[j] > lis[j+1]:                  ## "< for desending order      
+                lis[j],lis[j+1] = lis[j+1],lis[j]    
+    return lis
+print(sortascend())
+
+
+#Remove duplicates from the end of the list
+a=[]
+a.sort()
+last=a[-1]
+for i in range(len(a)-2,-1,-1):    
+    if last==a[i]:        
+        del a[i]    
+    else:
+        last=a[i]
+print(a)
+
+
+#Remove duplicates from the beginning of the list
+
+a = []
+for i in range(len(a)):    
+    for j in range(i + 1 , len(a) - 1):        
+        if a[i] == a[j]:            
+            del a[j]            
+            j -= 1
+print(a)
