@@ -1,0 +1,12 @@
+import numpy as np
+# Define x1,x2,error term and y
+sampleNumber = 1000;
+np.random.seed(0)
+x1 = np.random.normal(2, 1, sampleNumber )
+x2= np.random.normal(1, 2, sampleNumber )
+error=np.random.normal(0, 1, sampleNumber )
+y=0.5*x1+0.8*x2+error
+
+# Estimate the following by OLS
+X=np.transpose(np.array([x1,x2]))
+beta=(np.linalg.inv(X.T.dot(X))).dot(X.T).dot(y)
